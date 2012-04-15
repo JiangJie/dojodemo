@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="../static/dojotoolkit/dojo/resources/dojo.css"/>
+		<link rel="stylesheet" type="text/css" href="../static/dojotoolkit/dijit/themes/claro/claro.css" />
+		<title>Async</title>
+	</head>
+	<body class="claro">
+		<div id="view1">
+			<button id="buttonOne">Click me!</button>
+			<input type="text" id="textOne"/>
+		</div>
+		<img alt="" src="../static/images/200.jpg" />
+		<img alt="" src="../static/images/201.jpg" />
+		<img alt="" src="../static/images/202.jpg" />
+		<img alt="" src="../static/images/203.jpg" />
+		<img id="img1" alt="" src="../static/images/204.jpg" />
+	</body>
+</html>
+<script type="text/javascript" src="../static/dojotoolkit/dojo/dojo.js" data-dojo-config="async: true"></script>
+<script type="text/javascript">
+	function body_load() {
+		console.log(dijit.byId("textOne").get("value"));
+		//console.log(dijit.byId("textOne"));
+	}
+	require([
+		"dojo/parser",
+		"dijit/form/Button",
+		"dijit/form/ValidationTextBox"
+	], function(parser, Button, ValidationTextBox) {
+		new Button({label: "click"}, "buttonOne");
+		new ValidationTextBox({required: true}, "textOne");
+	});
+	require([
+		"dojo/parser",
+		"dijit/registry"
+	], function(parser, registry){
+		dojo.connect(registry.byId("buttonOne"), "onclick", "body_load");
+		console.log("parser");
+		dojo.byId("img1").style.marginLeft = "20px";
+		console.log("margin-left");
+		dojo.ready(function() {
+			console.log("domloaded");
+		});
+	});
+	require([
+		"dojo/domReady!"
+	], function() {
+		console.log("domReady!");
+	});
+	require([
+	"dojo/dom",
+	"dijit/registry"
+	], function(dom, registry) {
+			var viewNode = dojo.byId("view1");
+			console.log("hello");
+			console.log(viewNode);
+	});
+	window.onload = function() {
+		console.log("lodaded");
+	}
+</script>

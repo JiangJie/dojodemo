@@ -1,0 +1,78 @@
+{
+    /* 全局应用依赖 */
+    "dependencies": [
+        "dojox/mobile/Heading",
+        "dojo/mobile/RoundRect",
+        "my/custom/module"
+    ],
+ 
+    /* 应用模块，将被隐式加到前面列出的依赖模块上 */
+    "modules": [
+        "dojox/app/module/history",
+        "my/custom/appModule"
+    ],
+ 
+    /* 应用自身的html模板 */
+    "template": "example.html",
+ 
+    /* 默认加载的视图 */
+    "defaultView": "home",
+ 
+    /* 默认使用的视觉转换效果 */
+    "defaultTransition": "slide",
+ 
+    /* 视图与场景 */
+    "views": {
+ 
+        /* home是一个顶层的dojox.app.view */
+        "home": {
+ 
+            /* 用于实例化该视图的类 */
+            "type": "dojox.app.view",
+ 
+            /* 仅用于该视图的依赖模块 */
+            "dependencies": [
+                "dojox/mobile/ListItem",
+                "dojox/mobile/EdgeToEdgeCategory"
+            ],
+ 
+            /* 该视图采用的模板 */
+            "template": "views/home.html"
+        },
+ 
+        /* tabscene是一个包含三个子视图的dojox.app.scene */
+        "tabscene": {
+            /* 用于实例化该场景的类 */
+            "type": "dojox.app.scene",
+ 
+            /* 该场景的模板 */
+            "template": "tabScene.html",
+ 
+            /* 该场景的默认视图 */
+            "defaultView": "tab1",
+ 
+            /* 在标签页之间转换时默认使用“翻转”动画效果 */
+            "defaultTransition": "flip",
+ 
+            /* 用于该场景的视图 */
+            "views": {
+                "tab1":{
+                    "template": "views/tabs/tab1.html"
+                },
+                "tab2":{
+                    "template": "views/tabs/tab2.html"
+                },
+                "tab3":{
+                    "template": "views/tabs/tab3.html"
+                }
+            },
+ 
+            /* 特定于该场景的依赖模块 */
+            "dependencies": [
+                "dojox/mobile/RoundRectList",
+                "dojox/mobile/ListItem",
+                "dojox/mobile/EdgeToEdgeCategory"
+            ]
+        }
+    }
+}

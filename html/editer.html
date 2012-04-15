@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Index</title>
+        <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojo/resources/dojo.css"/>
+		<link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dijit/themes/claro/claro.css" />
+    	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojox/editor/plugins/resources/css/PageBreak.css" />
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojox/editor/plugins/resources/css/ShowBlockNodes.css" />
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojox/editor/plugins/resources/css/Preview.css" />
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojox/editor/plugins/resources/css/Save.css" />
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojox/editor/plugins/resources/css/Breadcrumb.css" />
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojox/editor/plugins/resources/css/FindReplace.css" />
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojox/editor/plugins/resources/css/PasteFromWord.css" />
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojox/editor/plugins/resources/css/InsertAnchor.css" />
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojox/editor/plugins/resources/css/CollapsibleToolbar.css" />
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojox/editor/plugins/resources/css/Blockquote.css" />
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojox/editor/plugins/resources/css/Smiley.css" />
+    </head>
+    <body class="claro">
+    	<div data-dojo-type="dijit.Editor" style="100%;min-height:200px;" data-dojo-props="extraPlugins:['prettyprint','pagebreak','showblocknodes','preview','save','toolbarlinebreak','normalizeindentoutdent','breadcrumb','findreplace','pastefromword','insertanchor','collapsibletoolbar','foreColor', 'hiliteColor','blockquote','smiley','uploadImage']">
+		    This is the <strong>default</strong> content.
+		</div>
+    </body>
+</html>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojo/dojo.js" data-dojo-config="async: true, parseOnLoad: true"></script>
+<script>
+    // Include the class
+    require([
+        "dijit/Editor", 
+        "dojo/parser",
+        "dojox/editor/plugins/PrettyPrint",
+        "dojox/editor/plugins/PageBreak",
+        "dojox/editor/plugins/ShowBlockNodes",
+        "dojox/editor/plugins/Preview",
+        "dojox/editor/plugins/Save",
+        "dojox/editor/plugins/ToolbarLineBreak",
+        "dojox/editor/plugins/NormalizeIndentOutdent",
+        "dojox/editor/plugins/Breadcrumb",
+        "dojox/editor/plugins/FindReplace",
+        "dojox/editor/plugins/PasteFromWord",
+        "dojox/editor/plugins/InsertAnchor",
+        "dojox/editor/plugins/CollapsibleToolbar",
+        "dojox/editor/plugins/TextColor",
+        "dojox/editor/plugins/Blockquote",
+        "dojox/editor/plugins/Smiley",
+        "dojox/editor/plugins/UploadImage"
+    ]);
+</script>

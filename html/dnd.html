@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="../static/dojotoolkit/dojo/dojo.js" data-dojo-config="async: true"></script>
+        <title>dnd</title>
+    </head>
+    <body>
+    	<div class="catalogContainer">
+    <h2>Catalog</h2>
+    <ul data-dojo-type="dojo.dnd.Source" id="catalogNode" class="container"
+        data-dojo-props="accept: [ 'inStock', 'outOfStock' ]" >
+      <li class="dojoDndItem inStock" dndType="inStock">Wrist watch</li>
+      <li class="dojoDndItem inStock" dndType="inStock">Life jacket</li>
+      <li class="dojoDndItem inStock" dndType="inStock">Toy bulldozer</li>
+      <li class="dojoDndItem outOfStock" dndType="outOfStock">
+        Vintage microphone</li>
+      <li class="dojoDndItem outOfStock" dndType="outOfStock">
+        TIE fighter</li>
+      <li class="dojoDndItem inStock" dndType="inStock">Apples</li>
+      <li class="dojoDndItem inStock" dndType="inStock">Bananas</li>
+      <li class="dojoDndItem outOfStock" dndType="outOfStock">
+        Tomatoes</li>
+      <li class="dojoDndItem inStock" dndType="inStock">Bread</li>
+    </ul>
+</div>
+ 
+<div class="cartContainer">
+    <h2>Cart</h2>
+    <ol data-dojo-type="dojo.dnd.Source" id="cartNode" class="container"
+        data-dojo-props="accept: [ 'inStock' ]" >
+    </ol>
+</div>
+<div class="wishlistContainer">
+    <h2>Wishlist</h2>
+    <ol data-dojo-type="dojo.dnd.Source" id="wishlistNode"
+        data-dojo-props="accept: [ 'inStock', 'outOfStock' ]"
+        class="container">
+    </ol>
+</div>
+
+    </body>
+</html>

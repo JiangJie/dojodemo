@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Dijit2</title>
+        <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojo/resources/dojo.css"/>
+		<link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dijit/themes/claro/claro.css" />
+		<style type="text/css">
+			html, body {
+			    width: 100%;
+			    height: 100%;
+			    margin: 0;
+			}
+		</style>
+    </head>
+    <body class="claro">
+    </body>
+</html>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojo/dojo.js" data-dojo-config="async: true"></script>
+<script type="text/javascript">
+	require([
+		"dijit/layout/BorderContainer", 
+		"dijit/layout/ContentPane", 
+		"dijit/layout/TabContainer",
+		"dijit/layout/AccordionContainer",
+		"dijit/layout/AccordionPane"
+	], function(BorderContainer, ContentPane, TabContainer, AccordionContainer, AccordionPane){
+        var bc = new BorderContainer({style: "height: 100%; width: 100%;"});
+        var cp_top = new ContentPane({
+            region: "top",
+            content: "Top"
+        });
+        var ac = new AccordionContainer({
+            region: "leading",
+            style: "width: 100px"
+        });
+        for(var i=0;i<3;i++) {
+        	var ap = new AccordionPane({
+        		title: "AP" + i
+        	});
+        	ac.addChild(ap);
+        }
+        bc.addChild(cp_top);
+        bc.addChild(ac);
+        var tc = new TabContainer({region: "center"});
+        var tab1 = new ContentPane({title: "tab 1"}),
+        tab2 = new ContentPane({title: "tab 2"});
+        tc.addChild( tab1 );
+        tc.addChild( tab2 );
+        bc.addChild(tc);
+        var cp_right = new ContentPane({
+            region: "trailing",
+            content: "Right"
+        });
+        var cp_bottom = new ContentPane({
+            region: "bottom",
+            content: "Bottom"
+        });
+        bc.addChild(cp_right);
+        bc.addChild(cp_bottom);
+        document.body.appendChild(bc.domNode);
+        bc.startup();
+	});
+	require([
+		"dojo/domReady!"
+	], function() {
+		console.log("ready");
+	});
+</script>
